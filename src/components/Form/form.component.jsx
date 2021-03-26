@@ -4,9 +4,10 @@ import './form.style.css'
 
 const form = () => {
     return (
-      <div>
-        <input type='number' name='userNumber' id='userNumber' placeholder='Enter your Phone Number'/>
+      <div className='form'>
+        <input type='number' name='userNumber' id='userNumber' placeholder='Enter your Phone Number' className='numberInput'/>
         <select name="" id=""></select>
+        <button onClick={() => {}}>Enter</button>
       </div>
     )
 }

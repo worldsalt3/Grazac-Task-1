@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import axios from 'axios'
-import Form from '../form.component';
+import Form from '../Form/form.component';
 
 const baseUrl = 'https://api.bondeyglobal.com'
 

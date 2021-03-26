@@ -1,0 +1,15 @@
+.form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 400px;
+    padding: 20px;
+}
+
+.numberInput {
+    margin-bottom: 20px;
+}
+
+select {
+   margin-bottom: 20px;
+}
