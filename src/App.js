@@ -1,11 +1,13 @@
+import React from 'react'
 import './App.css';
+import Data from '../src/components/Login.component'
 
 function App() {
   return (
-    <div className="App">
-      
+    <div className='App'>
+      <Data />
     </div>
-  );
+  )
 }
 
 export default App;
