@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import axios from 'axios'
+import Form from '../form.component';
 
 const baseUrl = 'https://api.bondeyglobal.com'
 
@@ -43,7 +44,7 @@ const Data = () => {
             })
               .then((response) => {
                 console.log(response)
-                const res = JSON.stringify(response.data)
+                const res = JSON.stringify(response.data.data)
                 setdataPlan(res)
               })
               .catch((error) => {
@@ -61,7 +62,8 @@ const Data = () => {
     return(
         <div>
             <div>
-               {/* {dataPlan} */}
+               {dataPlan}
+               <Form />
             </div>
         </div>
     )
