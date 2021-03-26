@@ -1,9 +1,16 @@
+.body {
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+}
+
 .form {
     display: flex;
     justify-content: center;
     flex-direction: column;
     width: 400px;
-    padding: 20px;
+    padding: 20px 30px;
+    border: 1px solid black;
 }
 
 .numberInput {
