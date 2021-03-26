@@ -1,7 +1,9 @@
 .body {
-    border: 1px solid black;
+   
     display: flex;
+    align-items: center;
     justify-content: center;
+    padding-top: 200px;
 }
 
 .form {
@@ -10,7 +12,6 @@
     flex-direction: column;
     width: 400px;
     padding: 20px 30px;
-    border: 1px solid black;
 }
 
 .numberInput {
@@ -19,4 +20,8 @@
 
 select {
    margin-bottom: 20px;
+}
+
+.amount {
+    margin-bottom: 20px;
 }

@@ -31,7 +31,7 @@ const Data = () => {
           })
     }
 
-    const getDataPlan =  () => {
+    const getData =  () => {
         const token = sessionStorage.getItem('token')
         if(token) {
             axios({
@@ -44,7 +44,8 @@ const Data = () => {
             })
               .then((response) => {
                 console.log(response)
-                const res = JSON.stringify(response.data.data)
+                const res = response.data.data
+                console.log(res)
                 setdataPlan(res)
               })
               .catch((error) => {
@@ -54,7 +55,7 @@ const Data = () => {
     }
 
     useEffect(() => {
-        getDataPlan()
+        getData()
         getToken()
     }, [])
 
@@ -62,8 +63,7 @@ const Data = () => {
     return(
         <div>
             <div>
-               {dataPlan}
-               <Form />
+               <Form dataPlan={dataPlan}/>
             </div>
         </div>
     )
