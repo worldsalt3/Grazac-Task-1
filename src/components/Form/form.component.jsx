@@ -17,15 +17,6 @@ const Form = ({dataPlan}) => {
       setNetworkDataPlan(e.target.value)
     }
     
-    console.log(
-      dataPlan[networks]
-        ? dataPlan[networks][networkDataPlan]
-        : null,
-      networkDataPlan
-    )
-    
-
-    console.log(dataPlan[networks])
 
     return (
       <div className='body'>
@@ -73,8 +64,8 @@ const Form = ({dataPlan}) => {
               : null}
           </select>
           <div className='amount'>
-            Amount: N{dataPlan[networks] && dataPlan[networks][networkDataPlan]
-              ? dataPlan[networks][networkDataPlan].amount
+            Amount:{dataPlan[networks] && dataPlan[networks][networkDataPlan]
+              ? `N${dataPlan[networks][networkDataPlan].amount}`
               : null}
           </div>
           <button onClick={() => {}}>Enter</button>

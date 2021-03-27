@@ -23,7 +23,6 @@ const Data = () => {
         })
           .then((response) => {
             const res = response.data.token
-            console.log(res)
             sessionStorage.setItem('token', res)
           })
           .catch((error) => {
@@ -43,9 +42,7 @@ const Data = () => {
               },
             })
               .then((response) => {
-                console.log(response)
                 const res = response.data.data
-                console.log(res)
                 setdataPlan(res)
               })
               .catch((error) => {
