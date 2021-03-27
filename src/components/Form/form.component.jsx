@@ -6,6 +6,7 @@ const Form = ({dataPlan}) => {
 
   const [networkDataPlan, setNetworkDataPlan] = useState('plan');
   const [networks, setNetworks] = useState('default')
+  const [display, setDisplay] = useState('')
 
 
 
@@ -17,6 +18,10 @@ const Form = ({dataPlan}) => {
       setNetworkDataPlan(e.target.value)
     }
     
+    const handleClick = () => {
+        const display =  dataPlan[networks][networkDataPlan]
+        setDisplay(display);
+    }
 
     return (
       <div className='body'>
@@ -68,8 +73,12 @@ const Form = ({dataPlan}) => {
               ? `N${dataPlan[networks][networkDataPlan].amount}`
               : null}
           </div>
-          <button onClick={() => {}}>Enter</button>
+          <button onClick={() => handleClick()}>Enter</button>
+          <div>
+            {JSON.stringify(display)}
+          </div>
         </div>
+
       </div>
     )
 }
