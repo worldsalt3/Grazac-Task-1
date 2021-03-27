@@ -4,7 +4,7 @@ import './form.style.css'
 
 const Form = ({dataPlan}) => {
 
-  const [neworkDataPlan, setNetworkDataPlan] = useState([]);
+  const [networkDataPlan, setNetworkDataPlan] = useState('plan');
   const [networks, setNetworks] = useState('default')
 
 
@@ -12,6 +12,18 @@ const Form = ({dataPlan}) => {
     const getSelectedNetwork = (e) => {
       setNetworks(e.target.value)
     }
+
+    const getSelectedPlan = (e) => {
+      setNetworkDataPlan(e.target.value)
+    }
+    
+    console.log(
+      dataPlan[networks]
+        ? dataPlan[networks][networkDataPlan]
+        : null,
+      networkDataPlan
+    )
+    
 
     console.log(dataPlan[networks])
 
@@ -40,19 +52,31 @@ const Form = ({dataPlan}) => {
               )
             })}
           </select>
-          <select name='dataPlan' id='dataPlan' value='plan'>
+          <select
+            name='dataPlan'
+            id='dataPlan'
+            value={networkDataPlan}
+            onChange={(e) => getSelectedPlan(e)}
+          >
             <option disabled value='plan'>
               Select Data Plan
             </option>
-            {dataPlan[networks] ? dataPlan[networks].map((dataPlans, index) => {
-                return (
-                  <option key={index} value={index}>
-                    {dataPlans.data}
-                  </option>
-                )
-            }) : null}
+            {dataPlan[networks]
+              ? dataPlan[networks].map((dataPlans, index) => {
+                  // console.log(index)
+                  return (
+                    <option key={index} value={index}>
+                      {dataPlans.data}
+                    </option>
+                  )
+                })
+              : null}
           </select>
-          <div className='amount'>Amount:</div>
+          <div className='amount'>
+            Amount: N{dataPlan[networks] && dataPlan[networks][networkDataPlan]
+              ? dataPlan[networks][networkDataPlan].amount
+              : null}
+          </div>
           <button onClick={() => {}}>Enter</button>
         </div>
       </div>
